@@ -14,9 +14,9 @@ export class App extends Component {
         <Navbar/>
           <div className="row">
             <div className="col-lg-12 text-center">
-            <Route exact path='/' component={Home}/>
-            <Route path='/search' component={SearchForm}/>  
-            <Route path='/add' component={Add}/>  
+              <Route exact path='/' component={Home}/>
+              <Route path='/search' component={SearchForm}/>  
+              <Route path='/add' component={Add}/>  
             </div>
           </div>
         </div>
