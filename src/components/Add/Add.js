@@ -6,6 +6,9 @@ export class Add extends Component {
     constructor () {
         super()
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.state = {
+            resultMessage: ''
+        }
     }
     handleSubmit(event) {
         event.preventDefault()
@@ -28,13 +31,15 @@ export class Add extends Component {
             return response.json()
         })
         .then(data => {
-            console.log(data)
+            this.setState({
+                resultMessage: data.created
+            })
         })
     }
     render() {
         return (
             <div className="container">
-                <h1>Add a Movie</h1>
+                <h1 id="createFormTitle">Add a Movie</h1>
                 <hr/>
                 <div className="row">
                     <div className="col-12">
@@ -51,8 +56,18 @@ export class Add extends Component {
                                 <label htmlFor="formGroupExampleInput2">Genres</label>
                                 <input type="text" className="form-control-lg col-12" ref="Genres" placeholder="Enter Genres"/>
                             </div>
-                            <button type="submit" className="btn btn-primary">Create New Movie</button>
+                            <button id="submitButton" type="submit" className="btn btn-secondary">Create New Movie</button>
                         </form>
+                    </div>
+                </div>
+                <br/>
+                <div className="row">
+                    <div className="col-12">
+                        <p>{this.state.resultMessage.title}</p>
+                        <p>{this.state.resultMessage.year}</p>
+                        <p>{this.state.resultMessage.genres}</p>
+                        <p>{this.state.resultMessage.index}</p>
+                        <p>{this.state.resultMessage._id}</p>
                     </div>
                 </div>
             </div>

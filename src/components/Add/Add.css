@@ -4,3 +4,16 @@
 .active {
     font-weight: bold;
 }
+
+#createFormTitle {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#submitButton {
+    width: 200px;
+    background-color: #353A3F;
+}
+.form-group {
+    text-align: left !important;
+}

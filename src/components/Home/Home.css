@@ -1,0 +1,12 @@
+:root {
+    font-family: 'Oswald', sans-serif;
+}
+h1 {
+    font-size: 60px;
+}
+p {
+    font-size: 22px;
+}
+#splashContainer {
+    transform: translateY(25vh);
+}

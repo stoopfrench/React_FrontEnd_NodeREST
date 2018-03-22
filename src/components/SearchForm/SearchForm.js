@@ -54,15 +54,16 @@ export class SearchForm extends Component {
 
     render() {
         return (
-            <div className="container-fluid mx-auto">
+            <div className="container mx-auto">
                 <h1 id="searchFormTitle">Movie Search</h1>
+                <hr/>
                 <div className="row">
                     <div className="col-lg-12">
-                        <form id="searchForm" className="form mx-auto" onSubmit={this.handleSubmit}>
-                            <div className="form-group col-xs-12">
-                                <input id="search" ref={this.state.selectValue} type="text" className="form-control-lg col-10" placeholder={this.state.placeHolder}/>
+                        <form id="searchForm" onSubmit={this.handleSubmit}>
+                            <div id="searchContainer" className="form-group">
+                                <input id="search" ref={this.state.selectValue} type="text" className="form-control-lg col-12" placeholder={this.state.placeHolder}/>
                             </div>
-                            <div className="col-lg-4 col-sm-6 col-xs-8 mx-auto my-3">
+                            <div className="form-group col-lg-4 col-sm-6 col-xs-8 mx-auto my-3">
                                 <select className="custom-select" value={this.state.selectValue} onChange={this.handleChange}>
                                     <option value="Title">Title</option>
                                     <option value="Genre">Genre</option>
@@ -77,7 +78,7 @@ export class SearchForm extends Component {
                     <div className="col-lg-12">
                         <BootstrapTable data={this.state.movies} striped={true} version="4">
                             <TableHeaderColumn dataField="title" dataSort={true} isKey={true}>Title</TableHeaderColumn>
-                            <TableHeaderColumn width="12vw" dataField="year" dataSort={true}>Year</TableHeaderColumn>
+                            <TableHeaderColumn width="10vw" dataField="year" dataSort={true}>Year</TableHeaderColumn>
                             <TableHeaderColumn dataField="genres">Genres</TableHeaderColumn>
                         </BootstrapTable>
                     </div>
