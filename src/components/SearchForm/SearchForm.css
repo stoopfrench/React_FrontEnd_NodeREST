@@ -1,0 +1,19 @@
+:root {
+    font-family: 'Oswald', sans-serif;
+}
+
+#resultsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#searchFormTitle {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#submitButton {
+    width: 200px;
+    background-color: #353A3F;
+}
