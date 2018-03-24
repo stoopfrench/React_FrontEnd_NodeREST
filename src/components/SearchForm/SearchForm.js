@@ -61,7 +61,7 @@ export class SearchForm extends Component {
                     <div className="col-lg-12">
                         <form id="searchForm" onSubmit={this.handleSubmit}>
                             <div id="searchContainer" className="form-group">
-                                <input id="search" ref={this.state.selectValue} type="text" className="form-control-lg col-12" placeholder={this.state.placeHolder}/>
+                                <input id="search" ref={this.state.selectValue} type="text" className="form-control-lg col-12" placeholder={this.state.placeHolder} autoComplete="off"/>
                             </div>
                             <div className="form-group col-lg-4 col-sm-6 col-xs-8 mx-auto my-3">
                                 <select className="custom-select" value={this.state.selectValue} onChange={this.handleChange}>
@@ -78,7 +78,7 @@ export class SearchForm extends Component {
                     <div className="col-lg-12">
                         <BootstrapTable data={this.state.movies} striped={true} version="4">
                             <TableHeaderColumn dataField="title" dataSort={true} isKey={true}>Title</TableHeaderColumn>
-                            <TableHeaderColumn width="10vw" dataField="year" dataSort={true}>Year</TableHeaderColumn>
+                            <TableHeaderColumn dataField="year" width="10vw" dataSort={true}>Year</TableHeaderColumn>
                             <TableHeaderColumn dataField="genres">Genres</TableHeaderColumn>
                         </BootstrapTable>
                     </div>

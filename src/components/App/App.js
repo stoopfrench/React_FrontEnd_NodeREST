@@ -10,9 +10,9 @@ export class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container-fluid">
-        <Navbar/>
-          <div className="row">
+      <div className="container-fluid">
+      <Navbar/>
+      <div className="row">
             <div className="col-lg-12 text-center">
               <Route exact path='/' component={Home}/>
               <Route path='/search' component={SearchForm}/>  
@@ -21,7 +21,6 @@ export class App extends Component {
           </div>
         </div>
       </Router>
-
     )
   }
 }
