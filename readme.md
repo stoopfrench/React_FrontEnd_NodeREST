@@ -1,4 +1,4 @@
-#React front-end for the RESTful Movie Database API built in Node
+# React front-end for the RESTful Movie Database API built in Node
 
 **Installation**
 
