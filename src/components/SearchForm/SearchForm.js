@@ -12,9 +12,9 @@ export class SearchForm extends Component {
         this.state = {
             movies: [],
             selectValue: 'Titles',
-            placeHolder: 'Search by Titles'
+            placeHolder: 'Search by Titles',
+            noResultsMessage: ''
         }
-
     }
 
     handleChange(event) {
@@ -41,15 +41,20 @@ export class SearchForm extends Component {
         }
 
         fetch(url)
-        .then((data) => {
+        .then((data) => {    
+            if(data.status === 404) {
+                this.setState({
+                    noResultsMessage: "No Movies Found",
+                    movies: []
+                })
+            } else {this.setState({noResultsMessage: ''})}
+            
             return data.json();
         }).then( json => {
-            if(json.data) {
-                this.setState({
-                    movies: json.data
-                })
-            }
-        });
+            this.setState({
+                movies: json.data
+            })
+        })
     }
 
     render() {
@@ -76,6 +81,7 @@ export class SearchForm extends Component {
                 </div>
                 <div className="row my-3">
                     <div className="col-lg-12">
+                        <h3>{this.state.noResultsMessage}</h3>
                         <BootstrapTable data={this.state.movies} striped={true} version="4">
                             <TableHeaderColumn dataField="title" dataSort={true} isKey={true}>Title</TableHeaderColumn>
                             <TableHeaderColumn dataField="year" width="10vw" dataSort={true}>Year</TableHeaderColumn>
